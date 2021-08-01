@@ -77,3 +77,31 @@ const planets = [
 
 
 // 3: Render the container component to the DOM
+
+
+const Planet = () => {
+  return (
+    <div className="container">
+    {planets.map((planet, index) => (
+      <div className="card">
+      <div>
+        <img src={planet.url} alt={planet.name} />
+        </div>
+        <h2>{planet.name}</h2>
+        <p>{planet.desc}</p>
+        <h3>Planet Profile</h3>
+        <ul>
+          <li><strong>Diameter:</strong> {planet.diameter}</li>
+          <li><strong>Moons:</strong> {planet.moons}</li>
+        </ul>
+      </div>
+    ))}
+    </div>  
+  );
+}
+
+ReactDOM.render
+(
+  <Planet />,
+  document.getElementById('root')
+);
